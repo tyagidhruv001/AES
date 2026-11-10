@@ -1,0 +1,60 @@
+# ── Aether private memory and generated reports ───────────────────────────────
+.aether/memory/private/
+.aether/reports/
+.aether/cache/
+*.local.json
+
+# ── Secrets and credentials ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.der
+*.crt
+*.csr
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+id_ecdsa
+id_ecdsa.pub
+id_dsa
+id_dsa.pub
+*.ppk
+
+# ── Python ─────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Node / JS ─────────────────────────────────────────────────────────────────
+node_modules/
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+dist/
+build/
+
+# ── Logs and temporary files ───────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# ── OS and editor noise ────────────────────────────────────────────────────────
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

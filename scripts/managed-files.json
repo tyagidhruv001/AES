@@ -1,0 +1,27 @@
+{
+  "global_rule": "rules/aether-engineering.md",
+  "agents": [
+    "agents/principal-architect.md",
+    "agents/project-planner.md",
+    "agents/senior-developer.md",
+    "agents/debugging-engineer.md",
+    "agents/security-engineer.md",
+    "agents/qa-engineer.md",
+    "agents/independent-reviewer.md",
+    "agents/performance-engineer.md",
+    "agents/devops-engineer.md"
+  ],
+  "skills": [
+    "skills/project-intake/SKILL.md",
+    "skills/feature-development/SKILL.md",
+    "skills/code-review/SKILL.md",
+    "skills/security-audit/SKILL.md",
+    "skills/debugging/SKILL.md",
+    "skills/testing/SKILL.md",
+    "skills/architecture-review/SKILL.md",
+    "skills/ui-ux-review/SKILL.md",
+    "skills/research-first/SKILL.md",
+    "skills/agent-orchestration/SKILL.md"
+  ],
+  "note": "Uninstaller uses explicit allowlists; this file documents managed targets."
+}

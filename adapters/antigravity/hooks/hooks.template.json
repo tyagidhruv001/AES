@@ -1,0 +1,17 @@
+{
+  "aether-destructive-command-gate": {
+    "enabled": false,
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"<AETHER_INSTALL_DIR>/adapters/antigravity/hooks/safety_gate.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
