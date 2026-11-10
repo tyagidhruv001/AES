@@ -11,7 +11,7 @@ Get-ChildItem (Join-Path $AetherRoot "skills") -Directory | ForEach-Object { Cop
 $AetherLocal = Join-Path $Root ".aether"
 New-Item -ItemType Directory -Force -Path (Join-Path $AetherLocal "memory\private"),(Join-Path $AetherLocal "reports"),(Join-Path $AetherLocal "cache") | Out-Null
 $ignore = Join-Path $Root ".gitignore"
-$ignoreLines = @(".aether/memory/private/"," .aether/reports/"," .aether/cache/")
+$ignoreLines = @(".aether/memory/private/", ".aether/reports/", ".aether/cache/")
 if (Test-Path $ignore) {
   $existing = Get-Content $ignore
   foreach ($line in $ignoreLines) { $clean = $line.Trim(); if ($existing -notcontains $clean) { Add-Content $ignore $clean } }

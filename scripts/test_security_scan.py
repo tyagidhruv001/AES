@@ -298,6 +298,61 @@ def test_secret_file_name() -> None:
 
 
 # ---------------------------------------------------------------------------
+# Test 8: Safe hook configuration is accepted without false alerts
+# ---------------------------------------------------------------------------
+def test_safe_hook_config() -> None:
+    """Safe hook configuration does not trigger security findings."""
+    print("\n[8] Safe hook configuration is accepted")
+    with tempfile.TemporaryDirectory() as tmp:
+        d = Path(tmp)
+        _write(d, "hooks/hooks.json", """\
+            {
+              "aether-destructive-command-gate": {
+                "enabled": false,
+                "PreToolUse": [
+                  {
+                    "matcher": "run_command",
+                    "hooks": [
+                      {
+                        "type": "command",
+                        "command": "python \\"adapters/antigravity/hooks/safety_gate.py\\"",
+                        "timeout": 5
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+        """)
+        findings = _findings_for(d)
+        _assert(
+            "Safe hooks.json raises zero security alerts",
+            len(findings) == 0,
+            f"Got findings: {findings}",
+        )
+
+
+# ---------------------------------------------------------------------------
+# Test 9: Excluded directories are respected
+# ---------------------------------------------------------------------------
+def test_excluded_directories() -> None:
+    """Files inside excluded directories (.git, node_modules, etc.) are skipped."""
+    print("\n[9] Excluded directories are respected")
+    with tempfile.TemporaryDirectory() as tmp:
+        d = Path(tmp)
+        # Place credential inside node_modules and .git (should be skipped)
+        cred_token = "token = '" + "abcdef" + "1234567890'"
+        _write(d, "node_modules/pkg/secret.json", f'{{"token": "{cred_token}"}}')
+        _write(d, ".git/hooks/pre-commit", f'{cred_token}')
+        findings = _findings_for(d)
+        _assert(
+            "Excluded directory contents produce no findings",
+            len(findings) == 0,
+            f"Got findings: {findings}",
+        )
+
+
+# ---------------------------------------------------------------------------
 # Runner
 # ---------------------------------------------------------------------------
 
@@ -314,6 +369,8 @@ def main() -> int:
     test_clean_documentation()
     test_no_false_positive_py_source()
     test_secret_file_name()
+    test_safe_hook_config()
+    test_excluded_directories()
 
     print()
     if failures:
