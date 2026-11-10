@@ -80,3 +80,4 @@ class FlawedAPIHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         # Silence standard HTTP logs during tests
         pass
+

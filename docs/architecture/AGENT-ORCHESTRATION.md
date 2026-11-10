@@ -153,3 +153,4 @@ AES detects host runtime capabilities and operates in one of two modes:
 
 3. **Diff Scope Enforcement:**
    Prior to approval, `independent-reviewer` verifies that `git diff --name-only` contains ONLY files listed in the task's `target_files`. Any unexpected file modifications constitute immediate grounds for rejection (`CHANGES_REQUIRED`).
+

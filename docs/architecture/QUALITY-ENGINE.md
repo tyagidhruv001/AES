@@ -91,3 +91,4 @@ Every non-trivial diff is inspected by `independent-reviewer` using an objective
 - **`APPROVE`:** Zero blocking or high-severity issues. All acceptance criteria evidenced.
 - **`APPROVE_WITH_NON_BLOCKING_ISSUES`:** Safe to complete; minor recommendations for future consideration.
 - **`CHANGES_REQUIRED`:** Blocked. High or medium severity defects must be fixed by `senior-developer` before approval.
+

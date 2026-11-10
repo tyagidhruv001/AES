@@ -11,7 +11,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set
+from typing import Any, Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -162,3 +162,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

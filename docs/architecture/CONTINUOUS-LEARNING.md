@@ -90,3 +90,4 @@ Engineers can reject or deprecate any learned entry at any time via CLI (`python
 | **Over-Generalization:** A one-off hack promoted to a global standard | Lessons default to project scope; promotion to global scope requires explicit CLI action. |
 | **Silent Constitutional Drift:** Agent modifying its own governance rules | Rules and constitution are read-only to learning scripts; only human git commits can alter them. |
 | **Credential Accumulation:** Private tokens stored as "learned facts" | Automated multi-pattern secret redaction is applied to all lesson content and evidence fields. |
+

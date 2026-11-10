@@ -57,3 +57,4 @@ Workspace Scope: <Project>/.aether/
 - **Invariant 1:** Aether installers NEVER overwrite non-Aether agents, rules, or skills in the user's config directory.
 - **Invariant 2:** Aether uninstaller removes ONLY files explicitly cataloged in `scripts/managed-files.json`.
 - **Invariant 3:** Hooks remain disabled by default until explicit `-EnableHooks` opt-in is chosen and safety gates are inspected.
+

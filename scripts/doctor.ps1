@@ -1,4 +1,4 @@
-﻿# Aether Diagnostic & Health Check Script
+# Aether Diagnostic & Health Check Script
 $ErrorActionPreference = "Continue"
 $Base = Join-Path $env:USERPROFILE ".gemini\config"
 Write-Host "============================================================" -ForegroundColor Cyan

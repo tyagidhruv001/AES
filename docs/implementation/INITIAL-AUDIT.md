@@ -170,3 +170,4 @@ The repository currently maintains three identical copies of every agent and ski
 The baseline audit confirms that while AES has a clear and coherent design vision, significant engineering work is required to transform it from a collection of Markdown prompt stubs and duplicated files into a **functional, tested, lightweight AI engineering system**.
 
 The implementation plan is articulated in `docs/implementation/MASTER-ROADMAP.md`.
+
